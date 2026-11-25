@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        /* Configuración general y fondo blanco */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #92fdcbea;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        /* Menú de navegación */
+        header {
+            background-color: #9b1b1b;
+            border-bottom: 1px solid #00c1fc;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff8f8;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3febd4;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;s
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #02bdca;
+        }
+
+        /* Pequeño carrusel de imágenes */
+        .carousel {
+            position: relative;
+            max-width: 700px;
+            height: 320px;
+            margin: 0 auto 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid #67b91ad3;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 217, 0, 0.85);
+            color: #222222;
+            border: 1px solid #a86519;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #4315e9;
+        }
+
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* Sección de los 5 párrafos grandes */
+        .contenido h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #111111;
+            font-size: 2.2rem;
+        }
+
+        .contenido p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: #333333;
+        }
+
+        /* Dos botones básicos de redirección */
+        .botones-accion {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 45px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primario {
+            background-color: #234669;
+            color: #ac7070;
+            border: 2px solid #811c1c;
+        }
+
+        .btn-primario:hover {
+            background-color: #004c99;
+            border-color: #004c99;
+        }
+
+        .btn-secundario {
+            background-color: #0f755c;
+            color: #0f5091;
+            border: 2px solid #0066cc;
+        }
+
+        .btn-secundario:hover {
+            background-color: #164a86;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #1c98c9;
+            border-top: 1px solid #052730;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            color: #666666;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <header>
+        <a href="#inicio" class="logo">Mi Sitio Web</a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container" id="inicio">
+
+        <!-- Pequeño carrusel de imágenes -->
+        <section class="carousel" id="galeria">
+            <div class="carousel-images" id="slideContainer">
+                <img src="https://images.pistonheads.com/nimg/44054/P1_1.jpg" alt="maclaren negro">
+                <img src="https://cdn.motor1.com/images/mgl/P33WYL/s1/ferrari-sp48-unica.jpg" alt="ferrari rojo">
+                <img src="https://images8.alphacoders.com/138/1385215.jpg" alt="jaguar verde">
+            </div>
+            <button class="carousel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+        </section>
+
+        <!-- 5 Párrafos grandes -->
+        <section class="contenido" id="articulos">
+            <h1>Carros deportivos exclusivos</h1>
+
+            <p>
+                Un automóvil deportivo es un automóvil de turismo diseñado para poder circular a altas velocidades. Al contrario que un automóvil de carreras, está pensado para ser conducido en la vía pública. Tienen mejor aceleración, velocidad máxima, adherencia al asfalto, mejor sistema de frenado y una mayor potencia que otros coches convencionales,[1] lo que se logra mediante motores, frenos, suspensión, caja de cambios, neumáticos, chasis y tipo de carrocería especiales. Las carrocerías asociadas a un deportivo son principalmente cupé y descapotable. En muchos casos tienen dos plazas y suelen ser coches ligeros.
+
+Tradicionalmente se reservaba este calificativo para vehículos de marcas connotadas, precios elevados y altas prestaciones, o bien, para vehículos de alta cilindrada. En atención estricta a su definición, se debe considerar que existen vehículos con características deportivas en prácticamente todos los segmentos.
+            </p>
+            Un automóvil deportivo es un automóvil de turismo diseñado para poder circular a altas velocidades. Al contrario que un automóvil de carreras, está pensado para ser conducido en la vía pública. Tienen mejor aceleración, velocidad máxima, adherencia al asfalto, mejor sistema de frenado y una mayor potencia que otros coches convencionales,[1] lo que se logra mediante motores, frenos, suspensión, caja de cambios, neumáticos, chasis y tipo de carrocería especiales. Las carrocerías asociadas a un deportivo son principalmente cupé y descapotable. En muchos casos tienen dos plazas y suelen ser coches ligeros.
+
+Tradicionalmente se reservaba este calificativo para vehículos de marcas connotadas, precios elevados y altas prestaciones, o bien, para vehículos de alta cilindrada. En atención estricta a su definición, se debe considerar que existen vehículos con características deportivas en prácticamente todos los segmentos.
+
+            <p>
+                Un coche deportivo de carreras está diseñado para maximizar velocidad, agilidad y seguridad dentro de las reglas de su categoría. Su estructura combina chasis, tren motriz, sistemas de control y aerodinámica, cada uno optimizado para el rendimiento 
+Xray Chipped Academy
+Xray Chipped Academy
++2
+.
+
+1. Chasis y seguridad
+Chasis: Es el esqueleto del vehículo. En alta competición se fabrica con materiales ligeros y rígidos como fibra de carbono o aleaciones de magnesio 
+totalmotor.com.mx
+totalmotor.com.mx
+. Soporta las cargas extremas, transmite fuerzas y asegura la estabilidad.
+
+Monocasco: Protege al piloto en caso de impacto, integrado en el chasis.
+
+Cockpit: Zona de control con cinturones y sistemas de seguridad.
+
+2. Tren motriz
+Motor: Puede ser de combustión interna (V6, V8, V10, V12, bóxer, turbo, híbrido) o eléctrico según la categoría 
+Xray Chipped Academy
+Xray Chipped Academy
++1
+. Está optimizado para máxima potencia y fiabilidad.
+
+Transmisión: En monopuestos como F1, la caja de cambios es secuencial o automática, transmitiendo la potencia a las ruedas traseras 
+f1.jonatanalmeira.com
+f1.jonatanalmeira.com
+.
+
+Sistema de escape y refrigeración: Vital para disipar calor y gestionar emisiones.
+
+3. Suspensión y dirección
+Suspensión: Muelles, amortiguadores y barras estabilizadoras ajustables para optimizar el agarre y la respuesta en curvas 
+Wikipedia
+Wikipedia
+.
+
+Dirección: Mecánica y directa en muchos diseños, con ajustes de multiplicación y comba de ruedas para precisión 
+Wikipedia
+Wikipedia
+.
+
+4. Aerodinámica
+Alerón delantero y morro: Controlan el flujo de aire y distribuyen la carga aerodinámica 
+f1.jonatanalmeira.com
+f1.jonatanalmeira.com
+.
+
+Fondo plano y difusor: Reducen la resistencia y aumentan la adherencia.
+
+Alerón trasero: Genera carga vertical y estabiliza en alta velocidad 
+f1.jonatanalmeira.com
+f1.jonatanalmeira.com
+.
+
+5. Frenos y neumáticos
+Frenos: Discos grandes, pinzas hidráulicas y sistemas de enfriamiento para frenadas potentes 
+Wikipedia
+Wikipedia
+.
+
+Neumáticos: Compuestos y perfiles adaptados a la pista y condiciones meteorológicas 
+Wikipedia
+Wikipedia
+.
+
+6. Sistemas auxiliares
+Combustible, refrigeración, sensores y telemetría: Monitoreo en tiempo real y gestión de energía 
+f1.jonatanalmeira.com
+f1.jonatanalmeira.com
+.
+
+Electrónica de control: Gestión de motor, frenos y aerodinámica.
+
+En resumen, la estructura de un coche deportivo de carreras es un conjunto integrado de chasis resistente y ligero, motor de alto rendimiento, sistemas de control precisos, aerodinámica optimizada y frenos potentes, todo regulado por normas técnicas específicas de cada categoría 
+Xray Chipped Academy
+Xray Chipped Academy
++2
+. Este diseño permite que el vehículo sea extremadamente rápido, seguro y competitivo en pista.
+            </p>
+
+            <p>
+                Ejemplos de categorías que podrías investigar son un Mazda MX-5, Toyota GR86, Subaru BRZ, Ford Mustang, Chevrolet Camaro o deportivos usados de generaciones anteriores. El modelo adecuado dependerá de tu país, edad, historial de manejo y presupuesto.
+
+2. Calcula el costo real
+Antes de comprar, suma:
+
+Enganche o pago inicial.
+
+Mensualidad del crédito, si financias.
+
+Seguro, que suele ser más caro en autos potentes o para conductores jóvenes.
+
+Gasolina, mantenimiento, frenos y llantas.
+
+Impuestos, placas, registro y estacionamiento.
+
+Depreciación, es decir, cuánto valor perderá el auto con el tiempo.
+
+Una guía financiera recomienda no fijarse solo en la mensualidad, porque el costo total de propiedad incluye compra, financiamiento, seguro, combustible, mantenimiento, trámites y valor de reventa. 
+todosobreautos.com
+todosobreautos.com
++2
+
+3. Elige una estrategia para conseguirlo
+Ahorrar y comprar de contado — Es la opción más segura si puedes esperar. Evitas intereses y tienes mayor poder para negociar.
+
+Dar un buen enganche y financiar — Puede funcionar si tienes ingresos estables, buen historial crediticio y una mensualidad cómoda. Compara bancos y agencias; un plazo largo baja la mensualidad, pero normalmente aumenta los intereses totales. 
+todosobreautos.com
+todosobreautos.com
+
+Comprar un usado certificado — Es un punto intermedio: cuesta menos que uno nuevo y puede incluir inspección o garantía.
+
+Empezar con un auto deportivo económico — En vez de perseguir un superdeportivo, busca uno divertido, confiable y con piezas disponibles.
+
+Riesgos que debes evitar
+Comprar porque “la mensualidad parece barata” sin calcular el costo total.
+
+Adquirir un usado sin revisar motor, transmisión, chasis, historial de accidentes y documentos.
+
+Gastar todo tu ahorro en el enganche y quedarte sin fondo para emergencias.
+
+Modificar demasiado el auto antes de aprender a conducirlo bien.
+
+Comprar un deportivo potente sin considerar cursos de manejo y conducción defensiva.
+            
+        </section>
+        <h2>como se estructuran</h2>
+
+        <!-- Dos botones básicos que direccionan -->
+        <section class="botones-accion" id="contacto">
+            <a href="https://www.google.com" target="_blank" class="btn btn-primario">Ir a Google</a>
+            <a href="#inicio" class="btn btn-secundario">Volver Arriba</a>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+        <p>Desarrollado con HTML5 y CSS3 en Visual Studio Code.</p>
+    </footer>
+
+    <!-- Script mínimo para el funcionamiento del carrusel -->
+    <script>
+        let indiceActual = 0;
+
+        function moverCarrusel(direccion) {
+            const contenedor = document.getElementById('slideContainer');
+            const totalImagenes = contenedor.children.length;
+            
+            indiceActual = (indiceActual + direccion + totalImagenes) % totalImagenes;
+            contenedor.style.transform = `translateX(-${indiceActual * 100}%)`;
+        }
+    </script>
+
+</body>
+</html>
